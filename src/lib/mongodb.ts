@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 
+// Import all models to ensure they are registered before any queries
+import "@/models/User";
+import "@/models/Class";
+import "@/models/Student";
+import "@/models/Attendance";
+import "@/models/Leave";
+
 const MONGODB_URI = process.env.MONGODB_URI!;
 
 if (!MONGODB_URI) {
