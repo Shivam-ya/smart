@@ -4,7 +4,7 @@ import { verifyToken } from './lib/auth';
 
 const protectedRoutes = ['/dashboard', '/api/classes', '/api/students', '/api/attendance', '/api/reports', '/api/leave', '/api/analytics'];
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   const isProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route));
